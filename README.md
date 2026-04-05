@@ -1,5 +1,25 @@
 # Livraria FIAP - Projeto DevOps
 
+## Video
+https://www.youtube.com/watch?v=Mes5-gfPJ54
+
+#tabelas
+CREATE TABLE tb_jogo (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    genero VARCHAR(50),
+    plataforma VARCHAR(50),
+    preco DECIMAL(10,2)
+);
+
+CREATE TABLE tb_livro (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    titulo VARCHAR(100) NOT NULL,
+    autor VARCHAR(100),
+    editora VARCHAR(100),
+    preco DECIMAL(10,2)
+)
+
 ## Descrição do Projeto
 
 Este projeto é uma aplicação web desenvolvida com **Spring Boot**, que simula uma livraria com cadastro e listagem de **Livros** e **Jogos**.
@@ -44,8 +64,6 @@ Este projeto foi pensado para ser publicado na Azure com:
 2) **Provisionamento e deploy do App Service** via script `deploy-movtodimdim.sh`
 3) **CI/CD no GitHub Actions** usando Secrets para injetar as credenciais do banco
 
-> Importante: os scripts `create-sql-server.ps1` e `deploy-movtodimdim.sh` são fornecidos pelo professor (ou pela disciplina). Se eles não estiverem neste repositório, coloque-os na raiz do projeto antes de executar os passos.
-
 ---
 
 ### 1) Criar o SQL Server e o banco (PowerShell)
@@ -70,7 +88,7 @@ Isso evita criar tudo manualmente.
 ### 2) Deploy do App Service (Bash)
 
 1. Altere seu terminal para **Bash** (Git Bash/WSL/Linux/Mac).
-2. Faça o upload/coloque o script fornecido pelo professor: `deploy-movtodimdim.sh`.
+2. Faça o upload/coloque o script `deploy-movtodimdim.sh`.
 3. Instale a extensão necessária do Azure CLI:
 
 ```bash
